@@ -1,0 +1,418 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* better practice in CSS community */ }
+
+html {
+  /*font-size: 10px; --> defines what 1 rem is*/
+  font-size: 62.5%; }
+
+body {
+  /* change box models, so borders & paddings not added to height & width */
+  box-sizing: border-box;
+  background-color: #FFF7EB; }
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7; }
+
+.btn {
+  font-family: Long Cang;
+  font-size: 6rem;
+  line-height: 1rem; }
+
+.heading-primary {
+  font-size: 12rem;
+  font-family: Long Cang; }
+
+.heading-secondary {
+  font-size: 6rem;
+  font-family: Long Cang;
+  font-weight: 200; }
+
+.heading-tertiary {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 4rem;
+  font-weight: 200; }
+
+.text-content {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.5rem; }
+
+.margin-bottom--small {
+  margin-bottom: 5rem; }
+
+.btn {
+  border: none;
+  height: 6rem;
+  padding: .8rem 2.1rem 1.5rem 1.7rem;
+  border-radius: .5rem;
+  background-color: #FFF7EB;
+  border: #1C1C1C 1px solid;
+  position: relative;
+  box-sizing: border-box;
+  background-color: transparent; }
+  .btn:focus {
+    outline: none; }
+  .btn::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    border-radius: .5rem;
+    top: 50%;
+    left: 50%;
+    background-color: #7B0000;
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(1.5, 2);
+    transition: all .25s ease-in-out;
+    opacity: 0; }
+  .btn:hover::before, .btn:focus::before {
+    transform: translate(-50%, -50%) scale(1);
+    outline: none;
+    opacity: 1; }
+  .btn:hover, .btn:focus {
+    color: #FFF7EB; }
+
+.img-hover-square-1 {
+  background-color: #1C1C1C; }
+  .img-hover-square-1__wrapper {
+    margin-top: 4rem;
+    position: relative;
+    height: 40rem;
+    overflow: hidden;
+    text-align: center; }
+    .img-hover-square-1__wrapper::before, .img-hover-square-1__wrapper::after {
+      content: "";
+      position: absolute;
+      top: 2.5rem;
+      left: 2.5rem;
+      right: 2.5rem;
+      bottom: 2.5rem;
+      z-index: 100; }
+    .img-hover-square-1__wrapper::before {
+      border-top: #FFF0D9 2px solid;
+      border-bottom: #FFF0D9 2px solid;
+      transform: scale(0, 1);
+      transition: all .25s ease-in-out; }
+    .img-hover-square-1__wrapper::after {
+      border-left: #FFF0D9 2px solid;
+      border-right: #FFF0D9 2px solid;
+      transform: scale(1, 0);
+      transition: all .25s ease-in-out; }
+    .img-hover-square-1__wrapper:hover::before {
+      transform: scale(1.07, 1); }
+    .img-hover-square-1__wrapper:hover::after {
+      transform: scale(1, 1.05); }
+  .img-hover-square-1__wrapper:hover .img-hover-square-1__img {
+    opacity: .3;
+    filter: blur(3px);
+    transform: scale(1); }
+  .img-hover-square-1__wrapper:hover .img-hover-square-1__caption {
+    transform: translate(-50%, -50%);
+    opacity: .9; }
+  .img-hover-square-1__img {
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+    overflow: hidden;
+    display: inline-block;
+    transition: all .25s ease-in-out;
+    transform: scale(1.03); }
+  .img-hover-square-1__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -12%);
+    font-size: 4rem;
+    color: #FFF0D9;
+    opacity: 0;
+    transition: transform .25s ease-in-out, opacity .5s ease-in-out; }
+
+.img-hover-square-2__wrapper {
+  width: 75%;
+  height: 52.5rem;
+  background-color: #7B0000;
+  margin: auto auto;
+  position: relative; }
+
+.img-hover-square-2__img {
+  width: 100%;
+  height: inherit;
+  transition: all .25s ease-in-out;
+  filter: brightness(30%); }
+
+.img-hover-square-2__wrapper:hover .img-hover-square-2__img {
+  transform: rotate(-10deg);
+  filter: brightness(100%); }
+
+.img-hover-square-2__wrapper:hover .img-hover-square-2__caption {
+  opacity: 0;
+  visibility: hidden; }
+
+.img-hover-square-2__wrapper:hover .img-hover-square-2__caption::after {
+  opacity: 1;
+  visibility: visible; }
+
+.img-hover-square-2__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: #FFF0D9;
+  text-align: center;
+  opacity: 1;
+  visibility: visible;
+  transition: all .25s ease-in-out; }
+  .img-hover-square-2__caption::before, .img-hover-square-2__caption::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .img-hover-square-2__caption::before {
+    height: 48rem;
+    width: 35rem;
+    border-right: rgba(255, 240, 217, 0.5) 0.5rem solid;
+    border-left: rgba(255, 240, 217, 0.5) 0.5rem solid; }
+  .img-hover-square-2__caption::after {
+    border-top: rgba(255, 240, 217, 0.5) 0.5rem solid;
+    border-bottom: rgba(255, 240, 217, 0.5) 0.5rem solid;
+    height: 45rem;
+    width: 38rem; }
+
+.info-box__container {
+  margin: 16rem auto 0rem auto;
+  width: 60%; }
+
+.info-box__field {
+  width: 80rem;
+  height: 15rem;
+  background-color: rgba(255, 247, 235, 0.8);
+  z-index: 1000;
+  border-radius: .5rem;
+  padding: 2.5rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 5px rgba(28, 28, 28, 0.5);
+  transition: ease-in-out all .25s; }
+  .info-box__field--1 {
+    margin: 10% auto auto 10%; }
+  .info-box__field--2 {
+    margin: 4% 0% auto auto; }
+  .info-box__field--3 {
+    margin: 4% auto auto 0%; }
+  .info-box__field i {
+    font-size: 6rem;
+    width: 25%;
+    float: left;
+    background-image: #00000050;
+    background-clip: text;
+    color: black; }
+  .info-box__field:hover {
+    transform: translate(0, -0.5rem) scale(1.05);
+    box-shadow: 10px 10px 10px rgba(28, 28, 28, 0.5); }
+
+.info-box__text {
+  text-align: left;
+  width: 100%;
+  float: right; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem)/2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2* ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+
+/* TO DO
+still make shadow below the header & below the red stripe
+
+using clippath it's more diffuclt
+
+either make a parent div and use filter shadow property
+
+or make another div with before & after element that I just make black, blur and make it seem like shadow
+
+TO DO
+
+maybe some hover effects
+like the rising sun when hovering Asahi
+
+TO DO
+
+add the Asahi logo (that I will make) to the right bottom of header --> check design 
+
+*/
+.header {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  /* Why clip-path on every single object?
+    by clipping .header directly, cannot move the ::after pseudo element (the red stripe) outside of the .header div */ }
+  .header::before, .header::after {
+    content: "";
+    position: absolute; }
+  .header::before {
+    background-image: linear-gradient(to bottom, #150f0027 0%, #150f00 65%);
+    height: inherit;
+    width: inherit;
+    z-index: 100;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%); }
+  .header::after {
+    background-color: #7B0000;
+    height: 20%;
+    width: 100%;
+    top: 86%;
+    left: -3%;
+    z-index: 50;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 35%); }
+  .header__style {
+    background-image: url(../img/header.jpg);
+    width: 75%;
+    height: 90%;
+    background-size: cover;
+    background-position: top;
+    margin: auto;
+    z-index: -1;
+    text-align: center; }
+    .header__style h1, .header__style h2 {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      color: #FFF0D9;
+      z-index: 100; }
+    .header__style h1 {
+      top: 68%;
+      left: 50%; }
+    .header__style h2 {
+      top: 80%;
+      left: 50%; }
+  .header__kanji {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 100; }
+  .header__kanji--left {
+    left: 6%;
+    top: 17%; }
+  .header__kanji--right {
+    left: 93.5%;
+    top: 18%;
+    font-size: 13rem; }
+
+/* TO DO
+
+maybe improve hover effect etc
+
+*/
+.navigation__list {
+  text-align: center; }
+
+.navigation__item {
+  display: inline-block;
+  margin: 1.5rem 5rem;
+  width: 20rem;
+  text-align: center;
+  position: relative; }
+
+.navigation__link {
+  text-decoration: none;
+  color: #1C1C1C;
+  font-size: 3rem;
+  font-weight: 300; }
+  .navigation__link:focus {
+    outline: none; }
+  .navigation__link::before, .navigation__link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: ease-in-out transform .25s; }
+  .navigation__link::before {
+    border-left: 2px solid #1C1C1C;
+    border-right: 2px solid #1C1C1C;
+    transform: scale(1, 0); }
+  .navigation__link::after {
+    border-top: 2px solid #1C1C1C;
+    border-bottom: 2px solid #1C1C1C;
+    transform: scale(0, 1); }
+
+.navigation__link:focus::before {
+  transform: scale(1, 1.3); }
+
+.navigation__link:focus::after {
+  transform: scale(1.1, 1); }
+
+.navigation__item:hover .navigation__link::before {
+  transform: scale(1, 1.3); }
+
+.navigation__item:hover .navigation__link::after {
+  transform: scale(1.1, 1); }
+
+.food-impressions {
+  width: 90vw;
+  height: 70rem;
+  margin: 7rem auto 0 auto;
+  text-align: center;
+  overflow: hidden; }
+
+.info-box {
+  width: 100%;
+  height: 80rem;
+  margin-bottom: 15rem;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  z-index: 100; }
+  .info-box::before, .info-box::after {
+    content: "";
+    height: inherit;
+    width: inherit;
+    position: absolute; }
+  .info-box::before {
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+    z-index: -10;
+    top: 6rem;
+    background-image: linear-gradient(180deg, #1C1C1C, rgba(28, 28, 28, 0.1)), url(../img/info-box.jpg);
+    background-position: center;
+    background-size: cover;
+    display: block; }
+  .info-box::after {
+    top: 0;
+    left: 6rem;
+    background-color: #7B0000;
+    z-index: -100;
+    clip-path: polygon(0 0, 100% 9%, 100% 100%, 0 100%);
+    border-radius: .5rem; }
+
+.restaurant-impressions {
+  width: 100%;
+  height: 150rem;
+  text-align: center; }
